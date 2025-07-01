@@ -1,0 +1,88 @@
+body {
+  font-family: "Noto Sans Bengali", "Poppins", sans-serif;
+  background: #2d2d2d;
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s ease;
+}
+
+.dots {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 200%;
+  height: 200%;
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 2px,
+    transparent 0
+  );
+  background-size: 25px 25px;
+  animation: moveDots 10s linear infinite;
+  z-index: 0;
+}
+
+@keyframes moveDots {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(40px, 40px);
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Backgrounds */
+.bg1 {
+  background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+}
+.bg2 {
+  background: linear-gradient(135deg, #471396, #b13bff);
+}
+.bg3 {
+  background: linear-gradient(135deg, #80d8c3, #4da8da);
+}
+.bg4 {
+  background: linear-gradient(135deg, #d6a4a4, #dae2f8);
+}
+.bg5 {
+  background: linear-gradient(135deg, #a8edea, #fed6e3);
+}
+.bg6 {
+  background: linear-gradient(135deg, #348f50, #56b4d3);
+}
+.bg7 {
+  background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
+}
+.bg7b {
+  background: linear-gradient(135deg, #d4fc79, #96e6a1);
+}
+.bgEnd {
+  background: linear-gradient(135deg, #1e1e2f, #2c2847);
+}
+
+h2 {
+  font-family: "Merriweather", serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+li {
+  font-size: 18px;
+  font-weight: bolder;
+  line-height: 1.7;
+  margin-bottom: 0.6rem;
+}

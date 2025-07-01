@@ -4,108 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Diploma Journey</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Premium Fonts -->
+
+    <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Merriweather:ital,wght@0,400;0,700&display=swap"
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali&display=swap"
       rel="stylesheet"
     />
 
-    <style>
-      body {
-        font-family: "Hind Siliguri", "Poppins", sans-serif;
-        background: #525354;
-        margin: 0;
-        padding: 0;
-      }
-      .card {
-        position: relative;
-        border-radius: 1rem;
-        overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        transition: all 0.5s ease;
-      }
-      .dots {
-        position: absolute;
-        top: -20px;
-        left: -20px;
-        width: 200%;
-        height: 200%;
-        background-image: radial-gradient(
-          circle,
-          rgba(255, 255, 255, 0.2) 2px,
-          transparent 0
-        );
-        background-size: 25px 25px;
-        animation: moveDots 10s linear infinite;
-        z-index: 0;
-      }
-      @keyframes moveDots {
-        from {
-          transform: translate(0, 0);
-        }
-        to {
-          transform: translate(40px, 40px);
-        }
-      }
-      .content {
-        position: relative;
-        z-index: 1;
-      }
-
-      /* Refined background gradients */
-      .bg1 {
-        background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
-      }
-      .bg2 {
-        background: linear-gradient(135deg, #748873, #d1a980);
-      }
-      .bg3 {
-        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-      }
-      .bg4 {
-        background: linear-gradient(135deg, #f6d365, #fda085);
-      }
-      .bg5 {
-        background: linear-gradient(135deg, #a8edea, #fed6e3);
-      }
-      .bg6 {
-        background: linear-gradient(135deg, #fccb90, #d57eeb);
-      }
-      .bg7 {
-        background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
-      }
-      .bgEnd {
-        background: linear-gradient(135deg, #1e1e2f, #2c2847);
-      }
-
-      h2 {
-        font-family: "Merriweather", serif;
-        font-size: 1.8rem;
-        font-weight: 700;
-        text-align: center;
-        margin-bottom: 1rem;
-      }
-      li {
-        font-size: 1.1rem;
-        line-height: 1.7;
-        margin-bottom: 0.6rem;
-      }
-    </style>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body class="min-h-screen flex flex-col justify-center items-center p-6">
-    <div
-      id="card"
-      class="card bg1 max-w-md w-full p-10 transition-all text-gray-900"
-    >
+    <div id="card" class="card bg1 max-w-md w-full p-10 transition-all">
       <div class="dots"></div>
-      <div id="content" class="content">
-        <!-- JS-injected content -->
-      </div>
+      <div id="content" class="content"></div>
     </div>
 
     <div class="mt-6 flex gap-4">
@@ -125,142 +43,8 @@
       </button>
     </div>
 
-    <script>
-        const slides = [
-          {
-            title: "🎓 Welcome!",
-            lines: [
-              "চল শুরু করি আমাদের ডিপ্লোমা লাইফের অসাধারণ জার্নি!",
-              "স্মৃতি, হাসি, কান্না, প্যারা — সব মিলে perfect একটা গল্প। ❤️",
-            ],
-            bg: "bg1",
-            fontColor: '#F8F8F8',
-            dark: false,
-          },
-          {
-            title: "📘 ১ম সেমিস্টার",
-            lines: [
-              "ওইদিন না অরিয়েন্টেশন হলো?",
-              "ইঞ্জিনিয়ারিং ড্রয়িং ক্লাসে A, B, C, D আঁকতাম!",
-              "বেসিক ইলেক্ট্রিসিটিতে না সকাল ৮টার ক্লাস ধরতাম?",
-              "সেমিস্টার ফাইনালে না অনুপম আর কল্যাণীর বিয়ে দিলাম! 😂",
-            ],
-            bg: "bg2",
-            dark: false,
-          },
-          {
-            title: "📗 ২য় সেমিস্টার",
-            lines: [
-              "পাইথনের ডিকশনারিকে শব্দ ভাণ্ডার ভেবেছিলাম 😅",
-              "রফিক স্যার এর ক্লাসে শাস্তি নাকি শান্তি?",
-              "জব সেশোনালের প্যারা ধীরে ধীরে বাড়তে লাগলো! 😫",
-            ],
-            bg: "bg3",
-            dark: false,
-          },
-          {
-            title: "📙 ৩য় সেমিস্টার",
-            lines: [
-              "সোস্যাল সাইন্সের ক্লাস কেমন লাগত?",
-              "পাইথনের ইনহেরিটেন্স আর পলিমরফিজম এখনো মনে আছে? 🤔",
-              "আইটি সাপোর্টে শামীম স্যারের প্র্যাক্টিকাল?",
-              "ডিজিটাল ইলেক্ট্রনিক্স-১ এর হ্যান্ডসাম স্যার? মেয়েদের ক্রাশ! 😁",
-            ],
-            bg: "bg4",
-            dark: false,
-          },
-          {
-            title: "📕 ৪র্থ সেমিস্টার",
-            lines: [
-              "বিজনেস কমিউনিকেশন আর কমার্সের শুরুতেই প্যারা!",
-              "পাইথন ঠিকমতো বুঝলাম না, তার উপর জাভা! 😵",
-              "ডাটা স্ট্রাকচারে চৈতি ম্যামের ক্লাস == মানসিক চাপ 😫",
-              "কম্পিউটার পেরিফেরাল — এখনো মনে আছে কি?",
-            ],
-            bg: "bg5",
-            dark: false,
-          },
-          {
-            title: "📔 ৫ম সেমিস্টার",
-            lines: [
-              "একাউন্টিং কি আসলে সহজ ছিলো? না শুধু নামেই? 🤨",
-              "জাভার প্রতিটা দিনই মাথার উপর দিয়েই যেত 😩",
-              "ওয়েব ডেভেলপমেন্ট - ডিজাইন ঠিকমতো করতে পারতাম নাকি? 😅",
-              "অপারেটিং সিস্টেমে আবার চৈতি ম্যাম! 😁",
-            ],
-            bg: "bg6",
-            dark: false,
-          },
-          {
-            title: "📒 ৬ষ্ঠ সেমিস্টার",
-            lines: [
-              "প্রিন্সিপাল স্যারের ক্লাস — মার্কেটিং / ম্যানেজমেন্ট 🔥",
-              "ডাটাবেস কানেক্ট করেছিলি তো? মাথায় কিছুই থাকতো না 😫",
-              "IOT! আহারে যন্ত্রপাতি ছাড়া প্র্যাক্টিকাল!",
-              "জুলাই আন্দোলন & ২৪ সালের বন্যা — ফেনী কখনো ভুলবে না 😅",
-            ],
-            bg: "bg7",
-            dark: false,
-          },
-          {
-            title: "📓 ৭ম সেমিস্টার",
-            lines: [
-              "মোট কয়টা ক্লাস করেছিলি হিসেব আছে? 😂",
-              "ডিজিটাল মার্কেটিংটা একটু শিখে রাখ — কাজে দিবে!",
-              "সাইবার সিকিউরিটি শিখে হ্যাকার হবি? 😈",
-              "আজকের শেষ ক্লাসেও অনেকে আসে নাই! 😅",
-            ],
-            bg: "bg7",
-            dark: false,
-          },
-          {
-            title: "🎉 শেষ কথা",
-            lines: [
-              "তুই থাকিস, ভালো থাকিস, যেখানেই থাকিস।",
-              "মনে পড়লে মেসেঞ্জারে টুস করে নক দিস।",
-              "বিয়ের সময় অবশ্যই একটা দাওয়াত দিস! 💌",
-              "যাদের বিয়ে হয়ে গেছে... তাদের জন্য নিরব শ্রদ্ধা 😭",
-              "আল~বিদা ২১-২২ সেশন ✨",
-              "শেষটা সবার সুন্দর হোক ❤️",
-            ],
-            bg: "bgEnd",
-            dark: true,
-          },
-        ];
-
-       let idx = 0;
-      const card = document.getElementById("card");
-      const content = document.getElementById("content");
-      const prevBtn = document.getElementById("prevBtn");
-      const nextBtn = document.getElementById("nextBtn");
-
-      function render() {
-        const slide = slides[idx];
-        card.className = `card ${slide.bg} max-w-md w-full p-10`;
-        const fontColor = slide.fontColor;
-
-        const items = slide.lines.map(line => `<li class="mb-2">• ${line}</li>`).join("");
-        content.innerHTML = `
-          <h2 class="text-2xl font-bold mb-4 text-center ${fontColor}">${slide.title}</h2>
-          <ul class="${fontColor}">${items}</ul>
-        `;
-
-        prevBtn.classList.toggle("hidden", idx === 0);
-        nextBtn.textContent = idx === slides.length - 1 ? "Restart" : "Next ➡";
-
-        if (idx === slides.length - 1) {
-          nextBtn.onclick = () => { idx = 0; render(); };
-        } else {
-          nextBtn.onclick = () => nav(1);
-        }
-      }
-
-      function nav(dir) {
-        idx = Math.max(0, Math.min(slides.length - 1, idx + dir));
-        render();
-      }
-
-      render();
-    </script>
+    <!-- External JavaScript -->
+    <script src="slides.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
